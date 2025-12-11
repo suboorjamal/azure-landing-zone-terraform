@@ -1,10 +1,17 @@
+# Terraform
 **/.terraform/
 *.tfstate
 *.tfstate.*
 crash.log
 .terraform.tfstate
+
+# Local overrides
 *.tfvars
 *.tfvars.json
+
+# Terraform plan outputs
 *.plan
+
+# IDE/editor
 .vscode/
 .idea/
