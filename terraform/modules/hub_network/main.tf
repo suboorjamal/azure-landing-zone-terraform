@@ -106,7 +106,7 @@ resource "azurerm_virtual_network_gateway" "vpn" {
   ip_configuration {
     name                          = "vnetGatewayConfig"
     public_ip_address_id          = azurerm_public_ip.vpn_gw[0].id
-    private_ip_allocation_method  = "Dynamic"
+    private_ip_address_allocation = "Dynamic"
     subnet_id                     = azurerm_subnet.gateway[0].id
   }
 }
@@ -134,7 +134,7 @@ resource "azurerm_virtual_network_gateway" "er" {
   ip_configuration {
     name                         = "vnetGatewayConfig"
     public_ip_address_id         = azurerm_public_ip.er_gw[0].id
-    private_ip_allocation_method = "Dynamic"
+    private_ip_address_allocation = "Dynamic"
     subnet_id                    = azurerm_subnet.gateway[0].id
   }
 }
