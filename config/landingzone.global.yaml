@@ -1,0 +1,37 @@
+environment: common
+location: eastus
+
+management_groups:
+  enabled: true
+  root_id: contoso
+  prefix: caf
+  topology: platform
+
+policy:
+  enabled: true
+  enable_security_baseline: true
+  enable_backup: true
+  enable_tag_policy: true
+
+logging_monitoring:
+  enabled: true
+  log_analytics_workspace_name: log-ops-landingzone
+  retention_days: 90
+
+hub_network:
+  enabled: true
+  address_space: 10.0.0.0/16
+  dns_servers: []
+  create_azure_firewall: false
+  create_vpn_gateway: false
+  create_er_gateway: false
+
+shared_services:
+  enabled: true
+  enable_key_vault: true
+  enable_automation_account: true
+
+feature_flags:
+  create_landing_zone_subscriptions: true
+  enable_defender_for_cloud: true
+  enable_diagnostics_for_all: true
