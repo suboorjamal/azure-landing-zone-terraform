@@ -17,6 +17,12 @@ module "alz_core" {
   count  = local.mg_enabled ? 1 : 0
   source = "../modules/alz_core"
 
+  providers = {
+    azurerm              = azurerm
+    azurerm.connectivity = azurerm.connectivity
+    azurerm.management   = azurerm.management
+  }
+
   enabled            = local.mg_enabled
   environment        = var.environment
   management_groups  = local.management_groups
